@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/* //device/apps/common/assets/res/any/strings.xml
-**
-** Copyright 2013, SlimRoms Project
+/*
+** Copyright 2013, The ChameleonOS Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
 ** You may obtain a copy of the License at
 **
-**     http://www.apache.org/licenses/LICENSE-2.0
+** http://www.apache.org/licenses/LICENSE-2.0
 **
 ** Unless required by applicable law or agreed to in writing, software
 ** distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,9 +16,16 @@
 ** limitations under the License.
 */
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
-    <!-- Description of the Random button in a KeyboardView. [CHAR LIMIT=NONE] -->
-    <string name="keyboardview_keycode_random">Reload random buttons</string>
+    <style name="TextAppearance.StatusBar.NetworkStats"
+        parent="@*android:style/TextAppearance.StatusBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/network_stats_text_size</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
 
 </resources>
