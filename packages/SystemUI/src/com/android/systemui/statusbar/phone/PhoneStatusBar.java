@@ -272,7 +272,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
 
     // the date view
     DateView mDateView;
-    View mClockView;
 
     // for heads up notifications
     private HeadsUpNotificationView mHeadsUpNotificationView;
@@ -809,15 +808,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
         mClearButton.setVisibility(View.GONE);
         mClearButton.setEnabled(false);
         mDateView = (DateView)mStatusBarWindow.findViewById(R.id.date);
-        if (mDateView != null) {
-            mDateView.setOnClickListener(mCalendarClickListener);
-            mDateView.setEnabled(true);
-        }
-        mClockView = mNotificationPanelHeader.findViewById(R.id.clock);
-        if (mClockView != null) {
-            mClockView.setOnClickListener(mClockClickListener);
-            mClockView.setEnabled(true);
-        }
 
         String qsConfig = Settings.System.getStringForUser(mContext.getContentResolver(),
                 Settings.System.QUICK_SETTINGS_TILES, UserHandle.USER_CURRENT);
@@ -1818,6 +1808,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
         if (DEBUG) {
             Log.d(TAG, String.format("disable: 0x%08x -> 0x%08x (diff: 0x%08x)",
                 old, state, diff));
+        }
 
         StringBuilder flagdbg = new StringBuilder();
         flagdbg.append("disable: < ");
@@ -1843,7 +1834,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
         flagdbg.append(((diff  & StatusBarManager.DISABLE_SEARCH) != 0) ? "* " : " ");
         flagdbg.append(">");
         Log.d(TAG, flagdbg.toString());
-        }
 
         if ((diff & StatusBarManager.DISABLE_SYSTEM_INFO) != 0) {
             mSystemIconArea.animate().cancel();
